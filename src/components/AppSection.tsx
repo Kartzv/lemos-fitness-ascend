@@ -59,7 +59,7 @@ const AppSection: React.FC = () => {
               <span className="absolute w-20 h-1 bg-lemos-yellow -bottom-3 left-0"></span>
             </h2>
             <p className="text-lg mb-6 text-gray-300">
-              Leve a LEMOS FITNESS no seu bolso e aproveite todos os benefícios do nosso aplicativo exclusivo:
+              Leve a FIT LIFE no seu bolso e aproveite todos os benefícios do nosso aplicativo exclusivo:
             </p>
             
             <ul className="space-y-4">
@@ -147,7 +147,7 @@ const AppSection: React.FC = () => {
               >
                 {/* App Header */}
                 <div className="bg-lemos-yellow p-4 flex items-center">
-                  <div className="font-bold text-lemos-black">LEMOS FITNESS</div>
+                  <div className="font-bold text-lemos-black">FIT LIFE</div>
                   <div className="ml-auto flex items-center space-x-2">
                     <div className="w-4 h-4 rounded-full bg-lemos-black bg-opacity-10"></div>
                     <div className="w-4 h-4 rounded-full bg-lemos-black bg-opacity-10"></div>
