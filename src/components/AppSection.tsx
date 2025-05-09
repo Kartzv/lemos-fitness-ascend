@@ -1,31 +1,53 @@
 
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useState } from 'react';
 import { cn } from "@/lib/utils";
 
 const AppSection: React.FC = () => {
   const phoneRef = useRef<HTMLDivElement>(null);
   const screenContentRef = useRef<HTMLDivElement>(null);
   
-  useEffect(() => {
-    const handleScroll = () => {
-      if (phoneRef.current && screenContentRef.current) {
-        const phoneRect = phoneRef.current.getBoundingClientRect();
-        const windowHeight = window.innerHeight;
-        
-        // Check if phone is in viewport
-        if (phoneRect.top < windowHeight && phoneRect.bottom > 0) {
-          const scrollPercentage = 1 - (phoneRect.top / (windowHeight - 200));
-          const clampedScroll = Math.max(0, Math.min(scrollPercentage, 1));
-          
-          // Apply scroll effect to the screen content
-          screenContentRef.current.style.transform = `translateY(-${clampedScroll * 60}%)`;
-        }
-      }
-    };
+  // Estado para controlar a posição do conteúdo da tela do celular
+  const [touchStartY, setTouchStartY] = useState<number | null>(null);
+  const [scrollPosition, setScrollPosition] = useState<number>(0);
+  
+  // Função para tratar o início do toque ou clique na tela do celular
+  const handleTouchStart = (e: React.TouchEvent | React.MouseEvent) => {
+    let clientY;
+    if ('touches' in e) {
+      clientY = e.touches[0].clientY;
+    } else {
+      clientY = (e as React.MouseEvent).clientY;
+    }
+    setTouchStartY(clientY);
+  };
+  
+  // Função para tratar o movimento do toque ou clique na tela do celular
+  const handleTouchMove = (e: React.TouchEvent | React.MouseEvent) => {
+    e.preventDefault(); // Impede o scroll padrão da página
     
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+    if (touchStartY === null || !screenContentRef.current) return;
+    
+    let clientY;
+    if ('touches' in e) {
+      clientY = e.touches[0].clientY;
+    } else {
+      clientY = (e as React.MouseEvent).clientY;
+    }
+    
+    const deltaY = touchStartY - clientY;
+    const newPosition = Math.max(0, Math.min(60, scrollPosition + deltaY * 0.1));
+    
+    setScrollPosition(newPosition);
+    setTouchStartY(clientY);
+    
+    // Aplica o deslocamento ao conteúdo da tela
+    screenContentRef.current.style.transform = `translateY(-${newPosition}%)`;
+  };
+  
+  // Função para tratar o final do toque ou clique na tela do celular
+  const handleTouchEnd = () => {
+    setTouchStartY(null);
+  };
 
   return (
     <section className="py-24 bg-gradient-to-b from-lemos-black to-lemos-darkgray text-white">
@@ -112,7 +134,17 @@ const AppSection: React.FC = () => {
               <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-32 h-6 bg-lemos-black rounded-b-xl z-10"></div>
               
               {/* Screen */}
-              <div className="absolute inset-0 bg-white rounded-[24px] overflow-hidden">
+              <div 
+                className="absolute inset-0 bg-white rounded-[24px] overflow-hidden"
+                onTouchStart={handleTouchStart}
+                onTouchMove={handleTouchMove}
+                onTouchEnd={handleTouchEnd}
+                onMouseDown={handleTouchStart}
+                onMouseMove={touchStartY !== null ? handleTouchMove : undefined}
+                onMouseUp={handleTouchEnd}
+                onMouseLeave={handleTouchEnd}
+                style={{ touchAction: 'none', cursor: 'pointer' }}
+              >
                 {/* App Header */}
                 <div className="bg-lemos-yellow p-4 flex items-center">
                   <div className="font-bold text-lemos-black">LEMOS FITNESS</div>
@@ -126,8 +158,8 @@ const AppSection: React.FC = () => {
                 <div className="h-[calc(100%-60px)] overflow-hidden relative">
                   <div 
                     ref={screenContentRef}
-                    className="transition-transform duration-300 ease-out"
-                    style={{ height: '160%' }}
+                    className="transition-transform duration-75 ease-out"
+                    style={{ height: '160%', transform: 'translateY(0%)' }}
                   >
                     {/* Dashboard */}
                     <div className="p-4">

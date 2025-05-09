@@ -86,7 +86,7 @@ const Plans: React.FC = () => {
               id={`plans-${plan.id}`}
               key={plan.id}
               className={cn(
-                "card-hover rounded-2xl overflow-hidden border-2",
+                "card-hover rounded-2xl overflow-hidden border-2 flex flex-col h-full",
                 plan.popular 
                   ? "border-lemos-yellow shadow-lg shadow-lemos-yellow/10" 
                   : "border-gray-200",
@@ -98,7 +98,7 @@ const Plans: React.FC = () => {
                   Mais Popular
                 </div>
               )}
-              <div className="p-6">
+              <div className="p-6 flex flex-col flex-grow">
                 <h3 className="text-xl font-bold mb-2">{plan.name}</h3>
                 <p className="text-lemos-mediumgray mb-4">{plan.description}</p>
                 <div className="flex items-end mb-4">
@@ -107,7 +107,7 @@ const Plans: React.FC = () => {
                 </div>
                 <div className="text-sm text-lemos-darkgray mb-2">Período: {plan.period}</div>
                 
-                <ul className="space-y-3 mb-6">
+                <ul className="space-y-3 mb-6 flex-grow">
                   {plan.features.map((feature, index) => (
                     <li key={index} className="flex items-start">
                       <svg className="w-5 h-5 text-lemos-yellow mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
