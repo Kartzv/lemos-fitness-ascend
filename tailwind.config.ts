@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,6 +62,15 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				lemos: {
+					yellow: "#FFD700",
+					black: "#000000",
+					white: "#FFFFFF",
+					darkgray: "#222222",
+					mediumgray: "#8A898C",
+					lightgray: "#F1F1F1",
+					gold: "#D4AF37"
 				}
 			},
 			borderRadius: {
@@ -84,11 +94,16 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'card-hover': {
+					'0%': { transform: 'translateY(0)' },
+					'100%': { transform: 'translateY(-10px)' }
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'card-hover': 'card-hover 0.3s ease-out forwards'
 			}
 		}
 	},
