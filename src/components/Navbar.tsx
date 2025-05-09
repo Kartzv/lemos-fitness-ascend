@@ -44,7 +44,7 @@ const Navbar: React.FC = () => {
       >
         <div className="container mx-auto px-4 flex items-center justify-between">
           <a href="#" className="text-lemos-yellow font-bold text-2xl md:text-3xl">
-            LEMOS FITNESS
+            FIT LIFE
           </a>
 
           {/* Desktop Navigation */}
@@ -124,7 +124,7 @@ const Navbar: React.FC = () => {
               </svg>
             </a>
             <a 
-              href="https://instagram.com/lemosfitness" 
+              href="https://instagram.com/fitlife" 
               target="_blank" 
               rel="noopener noreferrer"
               className="text-lemos-white hover:text-lemos-yellow transition-colors"
@@ -133,7 +133,7 @@ const Navbar: React.FC = () => {
               <Instagram className="w-5 h-5" />
             </a>
             <a 
-              href="https://facebook.com/lemosfitness" 
+              href="https://facebook.com/fitlife" 
               target="_blank" 
               rel="noopener noreferrer"
               className="text-lemos-white hover:text-lemos-yellow transition-colors"
@@ -240,7 +240,7 @@ const Navbar: React.FC = () => {
                   </svg>
                 </a>
                 <a 
-                  href="https://instagram.com/lemosfitness" 
+                  href="https://instagram.com/fitlife" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="text-lemos-white hover:text-lemos-yellow transition-colors"
@@ -249,7 +249,7 @@ const Navbar: React.FC = () => {
                   <Instagram className="w-6 h-6" />
                 </a>
                 <a 
-                  href="https://facebook.com/lemosfitness" 
+                  href="https://facebook.com/fitlife" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="text-lemos-white hover:text-lemos-yellow transition-colors"
@@ -301,7 +301,7 @@ const Navbar: React.FC = () => {
                 <p>Também nos encontre nas redes sociais</p>
                 <div className="flex justify-center gap-4 mt-3">
                   <a 
-                    href="https://instagram.com/lemosfitness" 
+                    href="https://instagram.com/fitlife" 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="text-lemos-darkgray hover:text-lemos-black transition-colors"
@@ -310,7 +310,7 @@ const Navbar: React.FC = () => {
                     <Instagram className="w-6 h-6" />
                   </a>
                   <a 
-                    href="https://facebook.com/lemosfitness" 
+                    href="https://facebook.com/fitlife" 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="text-lemos-darkgray hover:text-lemos-black transition-colors"

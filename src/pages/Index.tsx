@@ -13,7 +13,7 @@ import Footer from "@/components/Footer";
 const Index = () => {
   useEffect(() => {
     // Update document title
-    document.title = "LEMOS FITNESS | Academia";
+    document.title = "FIT LIFE | Academia";
     
     // Scroll to hash on page load if present
     if (window.location.hash) {

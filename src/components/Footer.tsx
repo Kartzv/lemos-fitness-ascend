@@ -15,20 +15,20 @@ const Footer: React.FC = () => {
           allowFullScreen 
           loading="lazy" 
           referrerPolicy="no-referrer-when-downgrade"
-          title="Localização da LEMOS FITNESS"
+          title="Localização da FIT LIFE"
         ></iframe>
       </div>
       
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div>
-            <h3 className="text-2xl font-bold text-lemos-yellow mb-4">LEMOS FITNESS</h3>
+            <h3 className="text-2xl font-bold text-lemos-yellow mb-4">FIT LIFE</h3>
             <p className="text-gray-300 mb-4">
               Transforme seu corpo e sua vida com a melhor academia da região.
             </p>
             <div className="flex space-x-4">
               <a 
-                href="https://instagram.com/lemosfitness" 
+                href="https://instagram.com/fitlife" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-white hover:text-lemos-yellow transition-colors"
@@ -37,7 +37,7 @@ const Footer: React.FC = () => {
                 <Instagram className="w-6 h-6" />
               </a>
               <a 
-                href="https://facebook.com/lemosfitness" 
+                href="https://facebook.com/fitlife" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-white hover:text-lemos-yellow transition-colors"
@@ -121,10 +121,10 @@ const Footer: React.FC = () => {
                 </a>
                 
                 <a 
-                  href="mailto:contato@lemosfitness.com"
+                  href="mailto:contato@fitlife.com"
                   className="block hover:text-lemos-yellow transition-colors pt-2"
                 >
-                  Email: contato@lemosfitness.com
+                  Email: contato@fitlife.com
                 </a>
               </div>
             </address>
@@ -132,7 +132,7 @@ const Footer: React.FC = () => {
         </div>
         
         <div className="mt-12 pt-6 border-t border-gray-800 text-center text-gray-400 text-sm">
-          <p>© 2025 LEMOS FITNESS. Todos os direitos reservados.</p>
+          <p>© 2025 FIT LIFE. Todos os direitos reservados.</p>
         </div>
       </div>
     </footer>
