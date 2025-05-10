@@ -138,7 +138,7 @@ const AppSection: React.FC = () => {
               
               {/* Screen */}
               <div 
-                className="absolute inset-0 bg-white rounded-[24px] overflow-hidden"
+                className="absolute inset-0 bg-white rounded-[24px] overflow-hidden select-none"
                 onTouchStart={handleTouchStart}
                 onTouchMove={handleTouchMove}
                 onTouchEnd={handleTouchEnd}
@@ -146,7 +146,7 @@ const AppSection: React.FC = () => {
                 onMouseMove={touchStartY !== null ? handleTouchMove : undefined}
                 onMouseUp={handleTouchEnd}
                 onMouseLeave={handleTouchEnd}
-                style={{ touchAction: 'none', cursor: 'pointer' }}
+                style={{ touchAction: 'none', cursor: 'pointer', userSelect: 'none' }}
               >
                 {/* App Header */}
                 <div className="bg-lemos-yellow p-4 flex items-center">
@@ -161,11 +161,11 @@ const AppSection: React.FC = () => {
                 <div className="h-[calc(100%-60px)] overflow-hidden relative bg-gray-50">
                   <div 
                     ref={screenContentRef}
-                    className="transition-transform duration-75 ease-out"
+                    className="transition-transform duration-75 ease-out select-none"
                     style={{ height: '160%', transform: 'translateY(0%)' }}
                   >
                     {/* Tabs Navigation */}
-                    <Tabs defaultValue="dashboard" className="w-full">
+                    <Tabs defaultValue="dashboard" className="w-full select-none">
                       <TabsList className="w-full grid grid-cols-3 rounded-none bg-gray-100 px-2">
                         <TabsTrigger value="dashboard" className="text-xs font-medium">Dashboard</TabsTrigger>
                         <TabsTrigger value="series" className="text-xs font-medium">Séries</TabsTrigger>
