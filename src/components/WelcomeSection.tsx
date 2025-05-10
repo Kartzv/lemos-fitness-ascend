@@ -38,9 +38,9 @@ const WelcomeSection: React.FC = () => {
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
           <div>
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">Seja bem-vindo à <span className="text-lemos-yellow">LEMOS FITNESS</span></h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">Seja bem-vindo à <span className="text-lemos-yellow">FIT LIFE</span></h2>
             <p className="text-lg mb-6 text-lemos-darkgray">
-              Na LEMOS FITNESS, acreditamos que a verdadeira transformação vai além da aparência física. 
+              Na FIT LIFE, acreditamos que a verdadeira transformação vai além da aparência física. 
               Nossa missão é ajudar você a alcançar seu potencial máximo, combinando treino, nutrição e bem-estar mental.
             </p>
             <p className="text-lg mb-6 text-lemos-darkgray">

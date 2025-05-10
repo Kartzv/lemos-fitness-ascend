@@ -27,7 +27,7 @@ const Hero: React.FC = () => {
       <div className="container mx-auto px-4 z-10">
         <div className="max-w-3xl">
           <h1 className="text-4xl md:text-6xl font-bold text-lemos-white mb-4">
-            LEMOS <span className="text-lemos-yellow">FITNESS</span>
+            FIT <span className="text-lemos-yellow">LIFE</span>
           </h1>
           
           <p className="text-xl md:text-2xl text-lemos-white mb-8 max-w-xl">
